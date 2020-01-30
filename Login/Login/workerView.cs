@@ -16,5 +16,10 @@ namespace Login
         {
             InitializeComponent();
         }
+
+        private void workerView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
