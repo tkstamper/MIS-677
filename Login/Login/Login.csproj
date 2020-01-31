@@ -46,16 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="loginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="loginScreen.Designer.cs">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LockMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockMessage.Designer.cs">
+      <DependentUpon>LockMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginTables.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginTables.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="managerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerView.Designer.cs">
+      <DependentUpon>managerView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="workerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="workerView.Designer.cs">
+      <DependentUpon>workerView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="loginScreen.resx">
+      <DependentUpon>loginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockMessage.resx">
+      <DependentUpon>LockMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +92,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="workerView.resx">
+      <DependentUpon>workerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="LoginTables.xsc">
+      <DependentUpon>LoginTables.xsd</DependentUpon>
+    </None>
+    <None Include="LoginTables.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginTables.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoginTables.xss">
+      <DependentUpon>LoginTables.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

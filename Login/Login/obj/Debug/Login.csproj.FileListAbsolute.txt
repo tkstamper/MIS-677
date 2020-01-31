@@ -8,3 +8,5 @@ C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.csproj.GenerateResource.ca
 C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
 C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.exe
 C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.pdb
+C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.LockMessage.resources
+C:\Users\Tim\source\repos\Login\Login\obj\Debug\Login.workerView.resources
