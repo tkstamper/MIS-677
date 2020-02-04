@@ -53,7 +53,7 @@ namespace Login
 
 
 
-
+            //If username doesnt exist
             if (dt.Rows.Count < 1)
             {
                 int attempt_per_session = 1;
@@ -61,15 +61,92 @@ namespace Login
                 int locked = 0;
                 int accesslevel = 0;
                 int failed_attempts = 1;
-                int succesful_attempts = 0;
-                SqlCommand addUser = new SqlCommand("INSERT INTO attempts (username, password, attempt_per_session, timer, lock, accesslevel, failed_attempts, successful_attempts) VALUES('" + userID + password + attempt_per_session + timer + locked + accesslevel + succesful_attempts + failed_attempts + "')", conn);
+                int successful_attempts = 0;
+                SqlCommand addUser = new SqlCommand("INSERT INTO attempts (username, password, attempt_per_session, timer, lock, accesslevel, failed_attempts, successful_attempts) VALUES('" + userID + password + attempt_per_session + timer + locked + accesslevel + successful_attempts + failed_attempts + "')", conn);
             }
             else
             {
-                if (dt.Rows[0][4].ToString() != "4")
+                //If no password is found (account doesnt exist)
+                if (dt.Rows[0][1].ToString() == null)
                 {
-                    MessageBox.Show(dt.Rows[0][4].ToString());
+                    //Increment failed attempts
+
+                    //If permalocked
+                    if (dt.Rows[0][6].ToString() == "1")
+                    {
+                        //Display permalock
+                    }
+                    //If failed attempts = 3
+                    if (dt.Rows[0][3].ToString() == "3")
+                    {
+                        //Lock
+
+                    }
+                    else if (dt.Rows[0][3].ToString() == "6")
+                    {
+                        //Permalock
+
+                    }
                 }
+                else
+                {
+                    //Increment fail counter
+
+                    //If permalocked
+                    if (dt.Rows[0][6].ToString() == "1")
+                    {
+                        //Display timer
+
+                    }
+                    //If timer isnt 0
+                    else if (dt.Rows[0][5].ToString() != "0")
+                    {
+                        //Display timer
+
+                    }
+                    else
+                    {
+                        //If password is wrong
+                        if (dt.Rows[0][1].ToString() != password)
+                        {
+                            //If failed attempts = 3
+                            if (dt.Rows[0][3].ToString() == "3")
+                            {
+                                //Lock 3 hours
+
+                            }
+                            else if (dt.Rows[0][3].ToString() == "6")
+                            {
+                                //Permalock
+
+                            }
+                            else
+                            {
+                                //Display password incorrect message and amount of fails
+                            }
+                        }
+                        //If password is right
+                        else
+                        {
+                            //Increment successful attempts
+
+
+                            //Reset failed attempts
+
+
+                            //If employee is a worker
+                            if (dt.Rows[0][7].ToString() == "Worker")
+                            {
+                                //Show worker screen
+                            }
+                            else
+                            {
+                                //Show manager screen
+                            }
+                        }
+                    }
+                }
+                MessageBox.Show(dt.Rows[0][0].ToString());
 
             }
         }
